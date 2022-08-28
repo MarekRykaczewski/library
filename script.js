@@ -17,14 +17,21 @@ function addBookToLibrary(title, author, pages, read) {
 
 function displayBooks() {
     const shelf = document.getElementById("shelf")
+    const bookContainer = document.createElement("div")
+    bookContainer.classList.add("book-container")
     for (let i = 0; i < myLibrary.length; i++) {
+        shelf.appendChild(bookContainer)
+
         const newBookTitle = document.createTextNode(myLibrary[i].title)
         const newBookAuthor = document.createTextNode(myLibrary[i].author)
         const newBookPages = document.createTextNode(myLibrary[i].pages)
         const newBookRead = document.createTextNode(myLibrary[i].read)
-        shelf.appendChild(newBookTitle)
-        shelf.appendChild(newBookAuthor)
-        shelf.appendChild(newBookPages)
-        shelf.appendChild(newBookRead)
+
+        bookContainer.appendChild(newBookTitle)
+        bookContainer.appendChild(newBookAuthor)
+        bookContainer.appendChild(newBookPages)
+        bookContainer.appendChild(newBookRead)
     }
 }
+
+displayBooks()
