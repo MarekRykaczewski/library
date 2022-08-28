@@ -22,10 +22,21 @@ function displayBooks() {
     for (let i = 0; i < myLibrary.length; i++) {
         shelf.appendChild(bookContainer)
 
-        const newBookTitle = document.createTextNode(myLibrary[i].title)
-        const newBookAuthor = document.createTextNode(myLibrary[i].author)
-        const newBookPages = document.createTextNode(myLibrary[i].pages)
-        const newBookRead = document.createTextNode(myLibrary[i].read)
+        const newBookTitle = document.createElement("p");
+        const newBookTitleText = document.createTextNode(myLibrary[i].title)
+        newBookTitle.appendChild(newBookTitleText)
+
+        const newBookAuthor = document.createElement("p");
+        const newBookAuthorText = document.createTextNode(myLibrary[i].author)
+        newBookAuthor.appendChild(newBookAuthorText)
+
+        const newBookPages = document.createElement("p");
+        const newBookPagesText = document.createTextNode(myLibrary[i].pages)
+        newBookPages.appendChild(newBookPagesText)
+
+        const newBookRead = document.createElement("p");
+        const newBookReadText = document.createTextNode(myLibrary[i].read)
+        newBookRead.appendChild(newBookReadText)
 
         bookContainer.appendChild(newBookTitle)
         bookContainer.appendChild(newBookAuthor)
