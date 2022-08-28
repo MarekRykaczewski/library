@@ -8,7 +8,11 @@ function Book(title, author, pages, read) {
 }
 
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 265, false)
+const theTest2= new Book("The test2", "J.R.R Tolkien", 215, true)
+const theTest3 = new Book("The test3", "J.R.R Tolkien", 235, false)
 myLibrary.push(theHobbit)
+myLibrary.push(theTest2)
+myLibrary.push(theTest3)
 
 function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read)
@@ -17,9 +21,10 @@ function addBookToLibrary(title, author, pages, read) {
 
 function displayBooks() {
     const shelf = document.getElementById("shelf")
-    const bookContainer = document.createElement("div")
-    bookContainer.classList.add("book-container")
+
     for (let i = 0; i < myLibrary.length; i++) {
+        const bookContainer = document.createElement("div")
+        bookContainer.classList.add("book-container")
         shelf.appendChild(bookContainer)
 
         const newBookTitle = document.createElement("p");
