@@ -7,7 +7,7 @@ function Book(title, author, pages, read) {
     this.read = read
 }
 
-const theHobbit = new Book("The Hobbit", "J.R.R Tolkein", 265, false)
+const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 265, false)
 myLibrary.push(theHobbit)
 
 function addBookToLibrary(title, author, pages, read) {
