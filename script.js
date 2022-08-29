@@ -16,7 +16,7 @@ Book.prototype.toggleRead = function () {
 }
 
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 265, false)
-const theTest2= new Book("The test2", "J.R.R Tolkien", 215, true)
+const theTest2 = new Book("The test2", "J.R.R Tolkien", 215, true)
 const theTest3 = new Book("The test3", "J.R.R Tolkien", 235, false)
 const theTest4 = new Book("The test4", "J.R.R Tolkien", 235, false)
 const theTest5 = new Book("The test5", "J.R.R Tolkien", 235, false)
@@ -57,25 +57,38 @@ function displayBooks() {
         const newBookReadText = document.createTextNode(myLibrary[i].read)
         newBookRead.appendChild(newBookReadText)
 
-        const newDeleteButtonCell = document.createElement("td");
+        const newButtonCell = document.createElement("td");
+
         const newDeleteButton = document.createElement("button");
         const newDeleteButtonText = document.createTextNode("Delete")
         newDeleteButton.appendChild(newDeleteButtonText)
         newDeleteButton.classList.add("delete-button")
-        newDeleteButtonCell.appendChild(newDeleteButton)
+        newButtonCell.appendChild(newDeleteButton)
 
         newDeleteButton.addEventListener('click', deleteRow)
+
+        const newToggleStatusButton = document.createElement("button")
+        const newToggleStatusButtonText = document.createTextNode("Read")
+        newToggleStatusButton.appendChild(newToggleStatusButtonText)
+        newButtonCell.appendChild(newToggleStatusButton)
+
+        newToggleStatusButton.addEventListener('click', toggleReadStatus)
 
         bookContainer.appendChild(newBookTitle)
         bookContainer.appendChild(newBookAuthor)
         bookContainer.appendChild(newBookPages)
         bookContainer.appendChild(newBookRead)
-        bookContainer.appendChild(newDeleteButtonCell)
+        bookContainer.appendChild(newButtonCell)
     }
 }
 
-let deleteRow = function() {
+const deleteRow = function() {
     this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)
+}
+
+const toggleReadStatus = function() {
+
+
 }
 
 function clearShelf() {
