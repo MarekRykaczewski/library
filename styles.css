@@ -80,3 +80,8 @@ input:focus, select:focus {
 .book-container:nth-of-type(even) {
     background-color: #f3f3f3;
 }
+
+.delete-button {
+    height: 30px;
+    width: 60px;
+}

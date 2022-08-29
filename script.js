@@ -49,10 +49,18 @@ function displayBooks() {
         const newBookReadText = document.createTextNode(myLibrary[i].read)
         newBookRead.appendChild(newBookReadText)
 
+        const newDeleteButtonCell = document.createElement("td");
+        const newDeleteButton = document.createElement("button");
+        const newDeleteButtonText = document.createTextNode("Delete")
+        newDeleteButton.appendChild(newDeleteButtonText)
+        newDeleteButton.classList.add("delete-button")
+        newDeleteButtonCell.appendChild(newDeleteButton)
+
         bookContainer.appendChild(newBookTitle)
         bookContainer.appendChild(newBookAuthor)
         bookContainer.appendChild(newBookPages)
         bookContainer.appendChild(newBookRead)
+        bookContainer.appendChild(newDeleteButtonCell)
     }
 }
 
