@@ -2,7 +2,6 @@
 
 body {
     margin: 0;
-    padding: 50px;
     background-color: rgb(221, 239, 250);
     display: flex;
     align-items: center;
@@ -14,15 +13,18 @@ body {
 
 #header {
     padding: 20px;
-    background-color: white;
+    background-color: #009879;
+    color: white;
+    font-size: 1.5em;
+    width: 100vw;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    width: 500px;
     text-align: center;
 }
 
 #input-section {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 50px;
     gap: 20px;
     background-color: white;
@@ -37,8 +39,19 @@ body {
  font-size: 1.2em;
  font-weight: bold;
  font-family: Roboto;
- width: 120px;
+ width: 100px;
+ height: 50px;
 }
+
+.input-column input, select {
+    height: 25px;
+    font-size: 1em;
+}
+
+input:focus, select:focus {
+    outline-color: #009879;
+}
+
 
 .input-column {
     display: flex;
@@ -47,7 +60,6 @@ body {
 }
 
 #shelf {
-    padding: 50px;
     font-size: 1.2em;
     font-family: Roboto;
     min-width: 1000px;
@@ -61,7 +73,6 @@ body {
 }
 
 .book-container {
-    border-bottom: 1px solid #dddddd;
     text-align: center;
 
 }
