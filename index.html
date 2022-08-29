@@ -14,37 +14,38 @@
             Library
         </h1>
     </div>
-    <div id="input-section">
-        <div class="input-column">
-            <label>Book</label>
-            <input type="Book">
-        </div>
-        <div class="input-column">
-            <label>Author</label>
-            <input type="Author">
-        </div>
-        <div class="input-column">
-            <label>Pages</label>
-            <input type="Pages">
-        </div>
-        <div class="input-column">
-            <label>Status</label>
-            <select type="Status">
-                <option value="read"> Read</option>
-                <option value="not read"> Not read</option>
-            </select>
-        </div>
-        <button> Submit </button>
+    <form id="input-section">
 
+            <div class="input-column">
+                <label>Book</label>
+                <input id="name-input" type="text">
+            </div>
+            <div class="input-column">
+                <label>Author</label>
+                <input id="author-input" type="text">
+            </div>
+            <div class="input-column">
+                <label>Pages</label>
+                <input id="pages-input" type="number">
+            </div>
+            <div class="input-column">
+                <label>Read</label>
+                <select id="status-input" type="boolean">
+                    <option value="true"> Read</option>
+                    <option value="false"> Not read</option>
+                </select>
+            </div>
+            <button type="button" id="add-book"> Submit </button>
 
-    </div>
+    </form>
+
     <table id="shelf">
         <tbody id="table-header">
             <tr>
                 <th>Name</th>
                 <th>Author</th>
                 <th>Pages</th>
-                <th>Status</th>
+                <th>Read</th>
                 <th></th>
             </tr>
             <tbody id="table-content">

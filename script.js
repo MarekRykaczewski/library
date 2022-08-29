@@ -56,4 +56,15 @@ function displayBooks() {
     }
 }
 
+const addButton = document.getElementById("add-book")
+
+addButton.onclick = function() {
+    let bookInput = document.getElementById("name-input").value
+    let authorInput = document.getElementById("author-input").value
+    let pagesInput = document.getElementById("pages-input").value
+    let statusInput = document.getElementById("status-input").value
+    addBookToLibrary(bookInput, authorInput, pagesInput, statusInput)
+    displayBooks()
+}
+
 displayBooks()
