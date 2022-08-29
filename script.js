@@ -26,26 +26,26 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function displayBooks() {
-    const shelf = document.getElementById("shelf")
+    const shelf = document.getElementById("table-content")
 
     for (let i = 0; i < myLibrary.length; i++) {
-        const bookContainer = document.createElement("div")
+        const bookContainer = document.createElement("tr")
         bookContainer.classList.add("book-container")
         shelf.appendChild(bookContainer)
 
-        const newBookTitle = document.createElement("p");
+        const newBookTitle = document.createElement("td");
         const newBookTitleText = document.createTextNode(myLibrary[i].title)
         newBookTitle.appendChild(newBookTitleText)
 
-        const newBookAuthor = document.createElement("p");
+        const newBookAuthor = document.createElement("td");
         const newBookAuthorText = document.createTextNode("By " + myLibrary[i].author)
         newBookAuthor.appendChild(newBookAuthorText)
 
-        const newBookPages = document.createElement("p");
+        const newBookPages = document.createElement("td");
         const newBookPagesText = document.createTextNode(myLibrary[i].pages + " pages")
         newBookPages.appendChild(newBookPagesText)
 
-        const newBookRead = document.createElement("p");
+        const newBookRead = document.createElement("td");
         const newBookReadText = document.createTextNode(myLibrary[i].read)
         newBookRead.appendChild(newBookReadText)
 
