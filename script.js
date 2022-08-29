@@ -56,6 +56,12 @@ function displayBooks() {
         newDeleteButton.classList.add("delete-button")
         newDeleteButtonCell.appendChild(newDeleteButton)
 
+        let deleteRow = function() {
+            this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)
+        }
+
+        newDeleteButton.addEventListener('click', deleteRow)
+
         bookContainer.appendChild(newBookTitle)
         bookContainer.appendChild(newBookAuthor)
         bookContainer.appendChild(newBookPages)
