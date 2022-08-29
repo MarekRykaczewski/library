@@ -56,10 +56,6 @@ function displayBooks() {
         newDeleteButton.classList.add("delete-button")
         newDeleteButtonCell.appendChild(newDeleteButton)
 
-        let deleteRow = function() {
-            this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)
-        }
-
         newDeleteButton.addEventListener('click', deleteRow)
 
         bookContainer.appendChild(newBookTitle)
@@ -68,6 +64,10 @@ function displayBooks() {
         bookContainer.appendChild(newBookRead)
         bookContainer.appendChild(newDeleteButtonCell)
     }
+}
+
+let deleteRow = function() {
+    this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)
 }
 
 function clearShelf() {
