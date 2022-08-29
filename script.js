@@ -56,6 +56,13 @@ function displayBooks() {
     }
 }
 
+function clearShelf() {
+    const shelf = document.getElementById("table-content")
+    while (shelf.firstChild) {
+        shelf.removeChild(shelf.lastChild)
+    }
+}
+
 const addButton = document.getElementById("add-book")
 
 addButton.onclick = function() {
@@ -64,6 +71,7 @@ addButton.onclick = function() {
     let pagesInput = document.getElementById("pages-input").value
     let statusInput = document.getElementById("status-input").value
     addBookToLibrary(bookInput, authorInput, pagesInput, statusInput)
+    clearShelf()
     displayBooks()
 }
 
