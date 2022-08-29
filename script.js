@@ -7,6 +7,14 @@ function Book(title, author, pages, read) {
     this.read = read
 }
 
+Book.prototype.toggleRead = function () {
+    if (this.read === true) {
+        this.read = false
+    } else {
+        this.read = true
+    }
+}
+
 const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 265, false)
 const theTest2= new Book("The test2", "J.R.R Tolkien", 215, true)
 const theTest3 = new Book("The test3", "J.R.R Tolkien", 235, false)
