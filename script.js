@@ -55,7 +55,10 @@ function displayBooks() {
 
         const newBookRead = document.createElement("td");
         const newBookReadText = document.createTextNode(myLibrary[i].read)
-        newBookRead.appendChild(newBookReadText)
+        const newToggleStatusButton = document.createElement("button")
+        newToggleStatusButton.addEventListener('click', toggleReadStatus)
+        newToggleStatusButton.appendChild(newBookReadText)
+        newBookRead.append(newToggleStatusButton)
 
         const newButtonCell = document.createElement("td");
 
@@ -66,13 +69,6 @@ function displayBooks() {
         newButtonCell.appendChild(newDeleteButton)
 
         newDeleteButton.addEventListener('click', deleteRow)
-
-        const newToggleStatusButton = document.createElement("button")
-        const newToggleStatusButtonText = document.createTextNode("Read")
-        newToggleStatusButton.appendChild(newToggleStatusButtonText)
-        newButtonCell.appendChild(newToggleStatusButton)
-
-        newToggleStatusButton.addEventListener('click', toggleReadStatus)
 
         bookContainer.appendChild(newBookTitle)
         bookContainer.appendChild(newBookAuthor)
@@ -87,7 +83,11 @@ const deleteRow = function() {
 }
 
 const toggleReadStatus = function() {
-
+    if (this.innerHTML === 'false') {
+        this.innerHTML = 'true'
+    } else {
+        this.innerHTML = 'false'
+    }
 
 }
 
