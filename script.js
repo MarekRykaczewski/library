@@ -57,7 +57,15 @@ function displayBooks() {
         const newBookReadText = document.createTextNode(myLibrary[i].read)
         const newToggleStatusButton = document.createElement("button")
         newToggleStatusButton.addEventListener('click', toggleReadStatus)
+        newToggleStatusButton.classList.add("status-button")
+
         newToggleStatusButton.appendChild(newBookReadText)
+
+        if (newToggleStatusButton.innerHTML === 'true') {
+            newToggleStatusButton.classList.add("active-button")
+        } else {
+            newToggleStatusButton.classList.add("inactive-button")
+        }
         newBookRead.append(newToggleStatusButton)
 
         const newButtonCell = document.createElement("td");
@@ -85,8 +93,12 @@ const deleteRow = function() {
 const toggleReadStatus = function() {
     if (this.innerHTML === 'false') {
         this.innerHTML = 'true'
+        this.classList.add("active-button")
+        this.classList.remove("inactive-button")
     } else {
         this.innerHTML = 'false'
+        this.classList.remove("active-button")
+        this.classList.add("inactive-button")
     }
 
 }
