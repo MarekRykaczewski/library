@@ -15,18 +15,18 @@ Book.prototype.toggleRead = function () {
     }
 }
 // FOR TESTING
-// const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 265, false)
-// const theTest2 = new Book("The test2", "J.R.R Tolkien", 215, true)
-// const theTest3 = new Book("The test3", "J.R.R Tolkien", 235, false)
-// const theTest4 = new Book("The test4", "J.R.R Tolkien", 235, false)
-// const theTest5 = new Book("The test5", "J.R.R Tolkien", 235, false)
-// const theTest6 = new Book("The test6", "J.R.R Tolkien", 235, false)
-// myLibrary.push(theHobbit)
-// myLibrary.push(theTest2)
-// myLibrary.push(theTest3)
-// myLibrary.push(theTest4)
-// myLibrary.push(theTest5)
-// myLibrary.push(theTest6)
+const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 265, false)
+const theTest2 = new Book("The test2", "J.R.R Tolkien", 215, true)
+const theTest3 = new Book("The test3", "J.R.R Tolkien", 235, false)
+const theTest4 = new Book("The test4", "J.R.R Tolkien", 235, false)
+const theTest5 = new Book("The test5", "J.R.R Tolkien", 235, false)
+const theTest6 = new Book("The test6", "J.R.R Tolkien", 235, false)
+myLibrary.push(theHobbit)
+myLibrary.push(theTest2)
+myLibrary.push(theTest3)
+myLibrary.push(theTest4)
+myLibrary.push(theTest5)
+myLibrary.push(theTest6)
 
 function addBookToLibrary(title, author, pages, read) {
     let newBook = new Book(title, author, pages, read)
@@ -35,6 +35,10 @@ function addBookToLibrary(title, author, pages, read) {
 
 function displayBooks() {
     const shelf = document.getElementById("table-content")
+
+    myLibrary.forEach((book, i) => {
+        book.id = i + 1;
+    })
 
     for (let i = 0; i < myLibrary.length; i++) {
         const bookContainer = document.createElement("tr")
@@ -71,6 +75,7 @@ function displayBooks() {
         const newButtonCell = document.createElement("td");
 
         const newDeleteButton = document.createElement("button");
+        newDeleteButton.setAttribute('id', myLibrary[i].id)
         const newDeleteButtonText = document.createTextNode("Delete")
         newDeleteButton.appendChild(newDeleteButtonText)
         newDeleteButton.classList.add("delete-button")
@@ -87,6 +92,9 @@ function displayBooks() {
 }
 
 const deleteRow = function() {
+    // console.log(this.id)
+    myLibrary = myLibrary.filter(book => book.id != this.id);
+    // console.log(myLibrary")
     this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode)
 }
 
