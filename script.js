@@ -63,6 +63,8 @@ function displayBooks() {
         newToggleStatusButton.addEventListener('click', toggleReadStatus)
         newToggleStatusButton.classList.add("status-button")
 
+
+        newToggleStatusButton.setAttribute('id', myLibrary[i].id)
         newToggleStatusButton.appendChild(newBookReadText)
 
         if (newToggleStatusButton.innerHTML === 'true') {
@@ -108,6 +110,9 @@ const toggleReadStatus = function() {
         this.classList.remove("active-button")
         this.classList.add("inactive-button")
     }
+    const thisBook = myLibrary.find(book => book.id == this.id)
+    thisBook.toggleRead()
+
 
 }
 
