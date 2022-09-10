@@ -1,19 +1,23 @@
 let myLibrary = []
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
+
+    toggleRead() {
+        if (this.read === true) {
+            this.read = false
+        } else {
+            this.read = true
+        }
+    }
+
 }
 
-Book.prototype.toggleRead = function () {
-    if (this.read === true) {
-        this.read = false
-    } else {
-        this.read = true
-    }
-}
 // FOR TESTING
 // const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 265, false)
 // const theTest2 = new Book("The test2", "J.R.R Tolkien", 215, true)
