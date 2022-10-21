@@ -14,19 +14,19 @@
             Library
         </h1>
     </div>
-    <form id="input-section">
+    <form id="input-section" action="" method="get">
 
             <div class="input-column">
                 <label>Book</label>
-                <input id="name-input" type="text">
+                <input id="name-input" type="text" required>
             </div>
             <div class="input-column">
                 <label>Author</label>
-                <input id="author-input" type="text">
+                <input id="author-input" type="text" required>
             </div>
             <div class="input-column">
                 <label>Pages</label>
-                <input id="pages-input" type="number">
+                <input id="pages-input" type="number" min="1">
             </div>
             <div class="input-column">
                 <label>Read</label>
@@ -35,7 +35,7 @@
                     <option value="false"> Not read</option>
                 </select>
             </div>
-            <button type="button" id="add-book"> Submit </button>
+            <button type="submit" id="add-book"> Submit </button>
 
     </form>
 

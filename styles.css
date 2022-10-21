@@ -115,3 +115,6 @@ input:focus, select:focus {
     color: white;
 }
 
+input:invalid {
+    border: 2px dashed red;
+}

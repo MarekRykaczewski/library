@@ -127,16 +127,18 @@ function clearShelf() {
     }
 }
 
-const addButton = document.getElementById("add-book")
+// const addButton = document.getElementById("add-book")
+const form = document.getElementById("input-section")
 
-addButton.onclick = function() {
+form.onsubmit = function() {
     let bookInput = document.getElementById("name-input").value
     let authorInput = document.getElementById("author-input").value
     let pagesInput = document.getElementById("pages-input").value
     let statusInput = document.getElementById("status-input").value
     addBookToLibrary(bookInput, authorInput, pagesInput, statusInput)
     clearShelf()
-    displayBooks()
+    displayBooks();
+    return false
 }
 
 displayBooks()
